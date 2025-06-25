@@ -1,13 +1,13 @@
-<doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Error - Page Not Found</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B0tina intel</title>
+
   <!-- Google Fonts: Atkinson Hyperlegible -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -17,67 +17,100 @@
 
     body, html {
       height: 100%;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
       font-family: 'Atkinson Hyperlegible', sans-serif;
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding:0;
+      color: black;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
-    
-    p {
-      color: #bbb;
-      text-size: 30px;
-     
-      }
-      
-      footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-        }
-        a {
-            color: #00a9e2;
-           display: block;
-            margin: 10px 0;
-        }
-       
 
-    .error-message {
-      font-size: 5rem;
-      font-weight: bold;
-      position: absolute;
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    #search {
+      padding: 12px 15px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 20px;
+    }
+
+    #buttons-container {
+      width: 100%;
+      max-width: 340px;
+      max-height: 60vh; /* max height with scroll */
+      overflow-y: auto;
+      padding-right: 8px; /* prevent content hiding under scrollbar */
+      -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    }
+
+    a {
+      display: block;
+      background-color: #007BFF;
       color: white;
-      animation: bounce 5s linear infinite;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin: 8px 0;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0, 123, 255, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: #0056b3;
+      box-shadow: 0 6px 12px rgba(0, 86, 179, 0.6);
+      outline: none;
     }
   </style>
-  </head>
-  <body>
+</head>
+
+<body>
+  <h1>Mokhabarat B0tina</h1>
   
-  <h1>
-  Mokhabarat B0tina
-  </h1>
-  
-  
-  <a href="/hs">hadi safar</a>
-  <br>
-  <a href="/md">moussa daya</a>
-  <br>
+  <input type="text" id="search" placeholder="Search..." aria-label="Search names" />
+
+  <div id="buttons-container">
+    <a href="/hs">hadi safar</a>
+    <a href="/md">moussa daya</a>
     <a href="/rc">rida charara</a>
-    <br>
     <a href="/as">abdelkarim safah</a>
-    <br>
     <a href="/kr">karim rifai</a>
-    <br>
     <a href="/ai">adam istanbuli</a>
-     <br>
     <a href="/rb">roukaya barakat</a>
-        <br>
     <a href="/gk1">geovanna kahwaji</a>
-      <br>
     <a href="/gk2">georgina kahwaji</a>
-  
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('search');
+    const buttonsContainer = document.getElementById('buttons-container');
+    const links = buttonsContainer.getElementsByTagName('a');
+
+    searchInput.addEventListener('input', function() {
+      const filter = this.value.toLowerCase();
+
+      for (const link of links) {
+        const text = link.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          link.style.display = 'block';
+        } else {
+          link.style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

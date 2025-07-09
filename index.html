@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Enter Password</title>
   <style>
     body {
@@ -21,27 +21,21 @@
       color: red;
     }
   </style>
-<script>
-  require('dotenv').config();
-const correctPassword = process.env.PASS;
-</script>
-
 </head>
 <body>
 
   <h2>Btina Intelligence</h2>
-  <input type="password" id="password" placeholder="Enter password">
+  <input type="password" id="password" placeholder="Enter password" />
   <button onclick="checkPassword()">Submit</button>
   <p id="error"></p>
 
   <script>
+    const correctPassword = "DK55ND79"; // None of your business
 
     function checkPassword() {
       const password = document.getElementById("password").value;
-      const correctPassword = process.env.PASS;
 
       if (password === correctPassword) {
-        // Redirect to homepage
         window.location.href = "not4youreyes2see112.html";
       } else {
         document.getElementById("error").textContent = "Incorrect password.";

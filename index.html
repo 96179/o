@@ -21,6 +21,11 @@
       color: red;
     }
   </style>
+<script>
+  require('dotenv').config();
+const correctPassword = process.env.PASSWORD;
+</script>
+
 </head>
 <body>
 
@@ -30,9 +35,10 @@
   <p id="error"></p>
 
   <script>
+
     function checkPassword() {
       const password = document.getElementById("password").value;
-      const correctPassword = ["a z x c v b n m", "boulad444", "112412"];
+      const correctPassword = process.env.PASS;
 
       if (password === correctPassword) {
         // Redirect to homepage
